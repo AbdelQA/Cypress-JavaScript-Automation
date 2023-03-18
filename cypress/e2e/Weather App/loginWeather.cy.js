@@ -6,7 +6,7 @@ describe('Search', () => {
     cy.visit('www.weather.com');
   })
   
-  it.skip('Verify user can search for a valid zip code and selects the correct city from Predictive Search', () => {
+  it('Verify user can search for a valid zip code and selects the correct city from Predictive Search', () => {
     
     // Enter text in Search Field
     cy.get('[id="LocationSearch_input"]').type("90012");
@@ -18,7 +18,7 @@ describe('Search', () => {
     cy.get('[data-testid="TodayWeatherModule"]').contains("Today's Forecast for Los Angeles, CA");
     })
 
-  it.skip('Verify user do a valid search and module does NOT contain certain text', () => {
+  it('Verify user do a valid search and module does NOT contain certain text', () => {
     
     // Enter text in Search Field
     cy.get('[id="LocationSearch_input"]').type("91355");
@@ -30,7 +30,7 @@ describe('Search', () => {
     cy.get('[data-testid="TodayWeatherModule"]').should('not.contain', "dasdas");
     })
 
-  it.skip('Verify invalid entry does not produce any results', () => {
+  it('Verify invalid entry does not produce any results', () => {
     
     // Enter invalid text in Search Field
     cy.get('[id="LocationSearch_input"]').type("randomtextdoesntexist");
@@ -40,7 +40,7 @@ describe('Search', () => {
     })
 
 
-  it('Verify invalid entry does not produce any results', () => {
+  it.skip('Verify invalid entry does not produce any results', () => {
   
 
     // Close the Privacy Popup
