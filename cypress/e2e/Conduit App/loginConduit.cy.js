@@ -5,7 +5,7 @@ beforeEach(() => {
 
 describe('Conduit Login Scenarios', () => {
    
-    it('Login with VALID User', () => {
+    it('User can Login with VALID User', () => {
         // Go to Sign In page, enter login info and login
         cy.get('.nav-item').contains('Sign in').click()
         cy.get('[placeholder="Email"]').type('qaportfolioaz@gmail.com')
@@ -17,8 +17,8 @@ describe('Conduit Login Scenarios', () => {
         cy.get('.feed-toggle').contains('Global Feed')
     })
 
-    it('Login with INVALID User', () => {
-        // Go to Sign In page, enter login info for an INVALID user and login
+    it('User cannot login with INVALID User - Error appears', () => {
+        // Go to Sign In page, enter login info for an INVALID user and click Sign In
         cy.get('.nav-item').contains('Sign in').click()
         cy.get('[placeholder="Email"]').type('abc@gmail.com')
         cy.get('[placeholder="Password"]').type('abc')
@@ -26,5 +26,35 @@ describe('Conduit Login Scenarios', () => {
 
         // Verify Error Message appears
         cy.get('.error-messages').contains('email or password is invalid')
+    })
+
+    it('User cannot login with BLANK EMAIL - Error appears', () => {
+        // Go to Sign In page, enter login info with a Blank Email and click Sign In
+        cy.get('.nav-item').contains('Sign in').click()
+        cy.get('[placeholder="Password"]').type('abc')
+        cy.get('[type="submit"]').click()
+
+        // Verify Error Message appears
+        cy.get('.error-messages').contains('email can\'t be blank')
+    })
+
+    it('User cannot login with BLANK PASSWORD - Error appears', () => {
+        // Go to Sign In page, enter login info with a Blank Password and click Sign In
+        cy.get('.nav-item').contains('Sign in').click()
+        cy.get('[placeholder="Email"]').type('abc@gmail.com')
+        cy.get('[type="submit"]').click()
+
+        // Verify Error Message appears
+        cy.get('.error-messages').contains('password can\'t be blank')
+    })
+
+    it('User cannot login with BLANK Values - API Returns a 500 error response', () => {
+        // Go to Sign In page, enter login info with a Blank Password and click Sign In
+        cy.get('.nav-item').contains('Sign in').click()
+        cy.get('[type="submit"]').click()
+
+        // Verify API returns 500 status code response
+        cy.intercept('POST', 'https://api.realworld.io/api/users/login').as('login')
+        cy.wait('@login').its('response.statusCode').should('eq', 500)
     })
 })
