@@ -1,8 +1,22 @@
 # Cypress-Automation-Practice-Scenarios
-Practicing some Cypress automation for Automation Engineer roles
+## Automation Scenarios include:
+- UI testing
+- API testing
+- Assertions
+- Custom Commands
+- Before/BeforeEach, After/AfterEach Hooks
+- Setting up Fixtures
+- Running tests in headless mode
+- Reporters
+- Custom Scripts
+- Cross-browser testing
 
-To Install Dependencies run:
-- Npm install
+### To Install Dependencies use:
 
-To Run tests in Cypress run:
-- npx cypress open
+`Npm install`
+
+### To Run tests in Cypress use:
+
+`npx cypress open`
+
+
