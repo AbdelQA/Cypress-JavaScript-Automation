@@ -65,26 +65,3 @@ describe('Search', () => {
   
 
 })
-
-
-/*
-
-CypressError: Timed out retrying after 4050ms: `cy.click()` failed because this element is not visible:
-
-`<button data-testid="ctaButton" class="Button--default--2gfm1 AccountLinks--loginLink--o69y1" type="button">Log In</button>`
-
-This element `<button.Button--default--2gfm1.AccountLinks--loginLink--o69y1>` is not visible because its parent 
-`<nav.ExpandableMenu--ExpandableMenu--Pypws>` has CSS property: `display: none`
-
-Fix this problem, or use `{force: true}` to disable error checking.
-    at runVisibilityCheck (https://weather.com/__cypress/runner/cypress_runner.js:151949:66)
-    at Object.isStrictlyVisible (https://weather.com/__cypress/runner/cypress_runner.js:151963:10)
-    at runAllChecks (https://weather.com/__cypress/runner/cypress_runner.js:130563:26)
-    at retryActionability (https://weather.com/__cypress/runner/cypress_runner.js:130631:16)
-From previous event:
-    at whenStable (https://weather.com/__cypress/runner/cypress_runner.js:146732:65)
-    at <unknown> (https://weather.com/__cypress/runner/cypress_runner.js:146173:14)
-From Your Spec Code:
-    at Context.eval (webpack:///./cypress/e2e/logintest.cy.js:56:59)
-
-*/
