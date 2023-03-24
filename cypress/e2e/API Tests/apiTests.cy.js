@@ -1,46 +1,43 @@
 describe('API testing with dummy APIs', () => {
-    // Define a unique ID value for API use
-    let airlineId = Date.now()
+
+  beforeEach(function () {
+    // Get Airline Data from fixture
+    cy.fixture('airlineData').then(function (data) {
+      this.data = data;
+    })
+  })
     
-    // Define Airline Data
-    let airlineName = "Cypress Test Automation"
-    let country = "USA"
-    let logo = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Qatar_Airways_Logo.svg/sri_lanka.png"
-    let slogan = "Cypress API Automation Works!"
-    let headquarters = "Palo Alto, CA"
-    let website = "www.apple.com"
-    let established = "1976"
-
-    // Define Passenger Data
-    let passengerId
+    // Define unique values 
+    let airlineId = Date.now()
     let passengerName = "Automation Passenger " + Date.now()
+    let passengerId
 
-    it('Create a new airline entry via POST endpoint', () => {
+    it('Create a new airline entry via POST endpoint', function () {
         cy.request('POST', 'https://api.instantwebtools.net/v1/airlines', {
             "id": airlineId,
-            "name": airlineName,
-            "country": country,
-            "logo": logo,
-            "slogan": slogan,
-            "head_quaters": headquarters,
-            "website": website,
-            "established": established
+            "name": this.data.airlineName,
+            "country": this.data.country,
+            "logo": this.data.logo,
+            "slogan": this.data.slogan,
+            "head_quaters": this.data.headquarters,
+            "website": this.data.website,
+            "established": this.data.established
         }).then((response) => {
         expect(response.status).to.eql(200)
             })
         })
 
-    it('Verify newly created airline is returned in GET endpoint', () => {
+    it('Verify newly created airline is returned in GET endpoint', function () {
         cy.request('GET', `https://api.instantwebtools.net/v1/airlines/${airlineId}`).then((response) => {
         expect(response.status).to.eql(200)
-        expect(response.body.country).to.eql(country)
-        expect(response.body.established).to.eql(established)
-        expect(response.body.head_quaters).to.eql(headquarters)
+        expect(response.body.country).to.eql(this.data.country)
+        expect(response.body.established).to.eql(this.data.established)
+        expect(response.body.head_quaters).to.eql(this.data.headquarters)
         expect(response.body.id).to.eql(airlineId)
-        expect(response.body.logo).to.eql(logo)
-        expect(response.body.name).to.eql(airlineName)
-        expect(response.body.slogan).to.eql(slogan)
-        expect(response.body.website).to.eql(website)
+        expect(response.body.logo).to.eql(this.data.logo)
+        expect(response.body.name).to.eql(this.data.airlineName)
+        expect(response.body.slogan).to.eql(this.data.slogan)
+        expect(response.body.website).to.eql(this.data.website)
             })
         })
 
