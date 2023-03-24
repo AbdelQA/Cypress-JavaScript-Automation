@@ -19,7 +19,7 @@
 
 `npx cypress open`
 
-### - (API Testing) For API Test scenarios, run the following file:
+### - (API Testing, Hooks, Fixtures) For API Test scenarios, run the following file:
 
 `apiTests.cy.js`
 
