@@ -1,4 +1,4 @@
-# Cypress Automation using Dummy APIs & Conduit Test Site 
+# Cypress Tests using Dummy APIs & Conduit Test Site 
 (NOTE: Work In Progress)
 
 ## Automation Scenarios include:
