@@ -30,5 +30,3 @@
 ### - (UI, Hooks, Commands) For End-to-end functionality, broken down into 4 smaller tests, run the following file:
 
 `functionalityTests.cy.js`
-
-### - The loginWeather.cy.js is a Work In Progress and ON HOLD for now as the Weather.com site appears to have some errors
