@@ -1,4 +1,6 @@
-# Cypress-Automation-Practice-Scenarios
+# Cypress Automation using Dummy APIs & Conduit Test Site 
+(NOTE: Work In Progress)
+
 ## Automation Scenarios include:
 - UI testing
 - API testing
