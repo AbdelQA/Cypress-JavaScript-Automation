@@ -1,4 +1,8 @@
-beforeEach(() => {    
+beforeEach(() => {
+    // Intercept and Alias API Requests
+    cy.intercept('POST', 'https://api.realworld.io/api/articles').as('articles')
+    cy.intercept('GET', 'https://api.realworld.io/api/articles?author=qatesting&limit=5&offset=0').as('allArticles')
+    
     // Go to Conduit app and Login
     cy.loginConduit('qaportfolioaz@gmail.com', 'Loveqa!123')
 })
@@ -12,8 +16,6 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
     const tagName = 'Tag ' + date
 
     it('Add a New Article', () =>{
-        cy.intercept('POST', 'https://api.realworld.io/api/articles').as('articles')
-        
         // Create a New Article and enter value for all fields
         cy.get('.nav-link').contains('New Article').click()
         cy.get('input[placeholder="Article Title"]').type(articleName)
@@ -33,9 +35,7 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
         cy.get('.preview-link').contains(articleName).click()
     })
 
-    it('Verify Article Details appear on the Article page', () =>{        
-        cy.intercept('GET', 'https://api.realworld.io/api/articles?author=qatesting&limit=5&offset=0').as('allArticles')
-
+    it('Verify Article Details appear on the Article page', () =>{
         // Verify Article Details appear on Details page
         cy.get('.user-pic').click()
         cy.wait('@allArticles').its('response.statusCode').should('eq', 200)
@@ -44,9 +44,7 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
         cy.get('.row.article-content').contains(articleText)
     })
 
-    it('Delete the Newly Created Article', () =>{        
-        cy.intercept('GET', 'https://api.realworld.io/api/articles?author=qatesting&limit=5&offset=0').as('allArticles')
-
+    it('Delete the Newly Created Article', () =>{
         // Delete the newly created article from the previous tests
         cy.get('.user-pic').click()
         cy.wait('@allArticles').its('response.statusCode').should('eq', 200)
@@ -57,6 +55,5 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
         // Verify the Article was deleted successfully
         cy.get('.user-pic').click()
         cy.get('.article-preview').contains('No articles are here... yet.')
-
     })
 })
