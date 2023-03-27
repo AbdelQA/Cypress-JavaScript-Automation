@@ -25,19 +25,23 @@
 
 `apiTests.cy.js`
 
-## Login Tests with Error validation:
+## Login Tests:
 
-`loginConduit.cy.js`
+`loginTests.cy.js`
+
+## Error Validation Tests:
+
+`errorsTests.cy.js`
 
 ## End-to-end Tests, broken down into 4 smaller tests:
 
 `functionalityTests.cy.js`
 
 
-# Test Results
+# Test Results (18 Tests in ~30 Seconds) 
 
-![image](https://user-images.githubusercontent.com/96100804/227678050-a298d681-5202-4d73-a68f-dee96a425f9b.png)
+![image](https://user-images.githubusercontent.com/96100804/228091482-38dbc66e-24b0-4912-98fb-044258445b81.png)
+![image](https://user-images.githubusercontent.com/96100804/228091485-b83aafb8-ebac-45bb-9084-b5297f6abc52.png)
+![image](https://user-images.githubusercontent.com/96100804/228091491-f1280591-9a6c-468c-9131-9125c2b16613.png)
+![image](https://user-images.githubusercontent.com/96100804/228091500-0fa5b7f6-e968-4227-a3f2-e9a3744adbd8.png)
 
-![image](https://user-images.githubusercontent.com/96100804/227678061-e9a1d548-38a6-449b-be01-39c943237106.png)
-
-![image](https://user-images.githubusercontent.com/96100804/227678054-c63b52cc-3f6b-4505-976c-b7b637d2a76d.png)
