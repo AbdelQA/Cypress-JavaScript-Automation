@@ -17,7 +17,11 @@
 
 ` npm install `
 
-## Running Tests:
+## Running Tests (Headless Mode):
+
+`npx cypress run`
+
+## Running Tests (Headed Mode, Cypress UI):
 
 `npx cypress open`
 
@@ -38,10 +42,14 @@
 `functionalityTests.cy.js`
 
 
-# Test Results (18 Tests in ~30 Seconds) 
+# Results (18 Tests in ~30 Seconds) 
 
 ![image](https://user-images.githubusercontent.com/96100804/228091482-38dbc66e-24b0-4912-98fb-044258445b81.png)
 ![image](https://user-images.githubusercontent.com/96100804/228091485-b83aafb8-ebac-45bb-9084-b5297f6abc52.png)
 ![image](https://user-images.githubusercontent.com/96100804/228091491-f1280591-9a6c-468c-9131-9125c2b16613.png)
 ![image](https://user-images.githubusercontent.com/96100804/228091500-0fa5b7f6-e968-4227-a3f2-e9a3744adbd8.png)
+
+
+# Results in Headless Mode
+![image](https://user-images.githubusercontent.com/96100804/228093832-d6b6185f-720f-44bc-9586-50255b3abb3e.png)
 
