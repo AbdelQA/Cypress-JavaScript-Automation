@@ -1,4 +1,7 @@
 beforeEach(() => {
+    // Intercept and Alias API Requests
+    cy.intercept('POST', 'https://api.realworld.io/api/users/login').as('login')
+
     // Go to URL
     cy.visit('https://demo.realworld.io/#/')
 })
@@ -54,7 +57,7 @@ describe('Conduit Login Scenarios', () => {
         cy.get('[type="submit"]').click()
 
         // Verify API returns 500 status code response
-        cy.intercept('POST', 'https://api.realworld.io/api/users/login').as('login')
+        
         cy.wait('@login').its('response.statusCode').should('eq', 500)
     })
 })
