@@ -9,7 +9,7 @@
 - Before/BeforeEach, After/AfterEach Hooks
 - Setting up Fixtures
 - Running tests in headless mode
-- Reporters
+- Reporters (Mochawesome Reports)
 - Custom Scripts
 - Cross-browser testing
 
@@ -53,3 +53,5 @@
 # Results in Headless Mode
 ![image](https://user-images.githubusercontent.com/96100804/228093832-d6b6185f-720f-44bc-9586-50255b3abb3e.png)
 
+# Results in Mochawesome HTML Report
+![image](https://user-images.githubusercontent.com/96100804/228459388-68bc2e55-1812-48a3-a4d5-2142d47f48aa.png)
