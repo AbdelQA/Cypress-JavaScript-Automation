@@ -8,8 +8,8 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "cypress": "^12.8.1",
+  "dependencies": {
+    "cypress": "^12.12.0",
     "cypress-mochawesome-reporter": "^3.3.0",
     "mochawesome": "^7.1.3"
   }

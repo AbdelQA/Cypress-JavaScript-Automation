@@ -3,7 +3,7 @@ beforeEach(() => {
     cy.intercept('POST', 'https://api.realworld.io/api/users/login').as('login')
 
     // Go to URL
-    cy.visit('https://demo.realworld.io/#/')
+    cy.visit('/#/')
 })
 
 describe('Conduit Login Scenarios', () => {
