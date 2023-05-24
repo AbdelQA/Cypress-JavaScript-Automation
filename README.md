@@ -5,6 +5,7 @@
 - UI testing
 - API testing
 - Assertions
+- Page Object Models (POMs)
 - Custom Commands
 - Before/BeforeEach, After/AfterEach Hooks
 - Setting up Fixtures
