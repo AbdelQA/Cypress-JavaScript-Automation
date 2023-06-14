@@ -38,17 +38,23 @@
 
 `errorsTests.cy.js`
 
+## Functionality Tests:
 
-# Results (18 Tests in ~30 Seconds) 
-
-![image](https://user-images.githubusercontent.com/96100804/228091482-38dbc66e-24b0-4912-98fb-044258445b81.png)
-![image](https://user-images.githubusercontent.com/96100804/228091485-b83aafb8-ebac-45bb-9084-b5297f6abc52.png)
-![image](https://user-images.githubusercontent.com/96100804/228091491-f1280591-9a6c-468c-9131-9125c2b16613.png)
-![image](https://user-images.githubusercontent.com/96100804/228091500-0fa5b7f6-e968-4227-a3f2-e9a3744adbd8.png)
+`functionalityTests.cy.js`
 
 
-# Results in Headless Mode
-![image](https://user-images.githubusercontent.com/96100804/228093832-d6b6185f-720f-44bc-9586-50255b3abb3e.png)
+# Results (15 Tests in ~23 Seconds) 
+
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/5ac48a56-bfc6-491b-a95c-9c351456bd21)
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/d3f6c930-baa4-43c3-8ffb-e6178c70a4dc)
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/41219615-9772-4658-9956-987dbb5cea15)
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/0ba86bc6-b3f3-497a-89af-8221c3f81050)
+
+
+# Results in Headless Mode (~21 Seconds)
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/8e3f4aef-ac07-4a4f-8780-171f26501740)
+
 
 # Results in Mochawesome HTML Report
-![image](https://user-images.githubusercontent.com/96100804/228459388-68bc2e55-1812-48a3-a4d5-2142d47f48aa.png)
+![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/e77010bd-95d6-4e72-8970-a15f25e5ea83)
+
