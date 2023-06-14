@@ -58,5 +58,3 @@
 # Results in Mochawesome HTML Report
 ![image](https://github.com/AbdelQA/Cypress-JavaScript-Automation/assets/96100804/e77010bd-95d6-4e72-8970-a15f25e5ea83)
 
-
-`functionalityTests.cy.js`
