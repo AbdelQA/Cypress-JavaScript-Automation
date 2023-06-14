@@ -15,7 +15,7 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
     const articleText = 'This is the Article text'
     const tagName = 'Tag ' + date
 
-    it('Add a New Article', () =>{
+    it('Add, View and Delete a New Article', () =>{
         // Create a New Article and enter value for all fields
         cy.get('.nav-link').contains('New Article').click()
         cy.get('input[placeholder="Article Title"]').type(articleName)
@@ -26,29 +26,17 @@ describe('Verify user can Create, View and Delete a Newly Created Article', () =
         // Publish the Article 
         cy.get('.btn').contains('Publish Article').click()
         cy.wait('@articles').its('response.statusCode').should('eq', 200)
-    })
 
-    it('Verify Article appears on Profile page', () =>{
         // Verify Article appears on Profile
         cy.get('.user-pic').click()
         cy.get('.preview-link').contains(articleDescription)
         cy.get('.preview-link').contains(articleName).click()
-    })
 
-    it('Verify Article Details appear on the Article page', () =>{
         // Verify Article Details appear on Details page
-        cy.get('.user-pic').click()
-        cy.wait('@allArticles').its('response.statusCode').should('eq', 200)
-        cy.get('.preview-link').contains(articleName).click()
         cy.get('.banner').contains(articleName)
         cy.get('.row.article-content').contains(articleText)
-    })
 
-    it('Delete the Newly Created Article', () =>{
         // Delete the newly created article from the previous tests
-        cy.get('.user-pic').click()
-        cy.wait('@allArticles').its('response.statusCode').should('eq', 200)
-        cy.get('.preview-link').contains(articleName).click()
         cy.get('.ion-trash-a').eq(0).click({force: true})
         cy.location('pathname').should('eq', '/')
         
