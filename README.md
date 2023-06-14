@@ -38,10 +38,6 @@
 
 `errorsTests.cy.js`
 
-## End-to-end Tests, broken down into 4 smaller tests:
-
-`functionalityTests.cy.js`
-
 
 # Results (18 Tests in ~30 Seconds) 
 
